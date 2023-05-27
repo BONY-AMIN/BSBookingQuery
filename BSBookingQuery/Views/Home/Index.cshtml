@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Domain.ViewModel.HotelViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row">
+        <div class="col-2">
+            <input type="text" class="form-control" name="name" placeholder="Name" />
+        </div>
+        <div class="col-2">
+            <input type="text" class="form-control" name="location" placeholder="Location" />
+        </div>
+        <div class="col-2">
+            <input type="number" class="form-control" name="lowrating" placeholder="From Rating" />
+         </div>
+        <div class="col-2">
+            <input type="number" class="form-control" name="highrating" placeholder="To Rating" />
+        </div>
+        
+        <div class="col-2">
+           
+            <input type="submit" value="Search" class="btn btn-success" />
+        </div>
+
+        <div class="col-3"></div>
+    </div>
+</form>
+<br />
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="font-weight-normal">
+                        <label style="font-size:23px;color:steelblue">@product.Name <span style="text-align:end">Rating: @product.RatingNm</span></label>
+                    </h4>
+                    <p>Type:@product.HotelType <span></span>Location: @product.LocationNm</p>
+                </div>
+                <img src="~/@product.Image" alt="Card Image" class="card-img-top" style="height:200px;" />
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size:20px; color:#a51313"><b>Price : @product.Price</b></label>
+                        </div>
+                        <a asp-action="HotelDetails" asp-Controller="Home" asp-route-id="@product.Id" class="btn btn-success pull-right">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+    <br />
+    
+
+</div>
+<div class="form-group">
+    <a asp-action="Index" class="btn btn-success">Back to Home</a>
+</div>

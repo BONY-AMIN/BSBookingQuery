@@ -1,0 +1,167 @@
+﻿@model Domain.ViewModel.HotelViewModel
+
+@{
+    ViewData["Title"] = "HotelDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+
+<h2 class="text-info">Hotel Details</h2>
+<form asp-action="HotelDetails" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <input asp-for="Id" type="hidden" />
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Name" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="HotelType"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="HotelType" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="HotelType" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Price"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Price" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="LocationNm"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="LocationNm" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="LocationNm" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="RatingNm"></label>
+                </div>
+                <div class="col-8">
+                    @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                    <input asp-for="RatingNm" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="RatingNm" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Details"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Details" readonly class="form-control" />
+                </div>
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                   
+                </div>
+                <div class="col-8">
+                    <h2 class="text-warning">Comments</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="CommentorName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="CommentorName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="CommentorName" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Title"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Title" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Comments"></label>
+                    </div>
+                    <div class="col-8">
+                        
+                        <textarea asp-for="Comments" type="text" class="form-control" rows="5" autofocus></textarea>
+                    </div>
+                    <span asp-validation-for="Comments" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group" style="text-align:end">
+            <input type="submit" class="btn btn-primary" value="Post Comment" />
+            
+        </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-success">Back to Home</a>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <img src="~/@Model.Image" width="100%" style="border-radius:5px;border:1px solid #efefef" />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <h3>Comments</h3>
+                @foreach (var product in Model.commentLists)
+                {
+                    
+                        <div class="card">
+                            <div class="card-header" style="color:aqua">
+                                <h4 class="font-weight-normal">
+                                    <label style="font-size:23px;color:steelblue">Title :@product.Title</label>
+                                </h4>
+                            <div class="btn-group">
+                                <label style="font-size:20px; color:#a51313"><b>Author : @product.CommentorName</b></label>
+                            </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    
+                                    <p>@product.Comments</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                }
+
+
+        </div>
+
+           
+
+        </div>
+       
+
+    </div>
+</form>
+

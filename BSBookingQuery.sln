@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSBookingQuery", "BSBookingQuery\BSBookingQuery.csproj", "{DA2B23E6-5E5D-4F3F-B5E3-F9DED3BD91CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A1FDB0AF-2B0E-4D88-8696-EE858A8C3525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{AF33CACB-2BE9-4095-9EC0-2845810630E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA2B23E6-5E5D-4F3F-B5E3-F9DED3BD91CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2B23E6-5E5D-4F3F-B5E3-F9DED3BD91CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2B23E6-5E5D-4F3F-B5E3-F9DED3BD91CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2B23E6-5E5D-4F3F-B5E3-F9DED3BD91CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FDB0AF-2B0E-4D88-8696-EE858A8C3525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FDB0AF-2B0E-4D88-8696-EE858A8C3525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FDB0AF-2B0E-4D88-8696-EE858A8C3525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FDB0AF-2B0E-4D88-8696-EE858A8C3525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF33CACB-2BE9-4095-9EC0-2845810630E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF33CACB-2BE9-4095-9EC0-2845810630E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF33CACB-2BE9-4095-9EC0-2845810630E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF33CACB-2BE9-4095-9EC0-2845810630E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2C2EEF3-674F-4B02-A539-885D8AB9D3FB}
+	EndGlobalSection
+EndGlobal
